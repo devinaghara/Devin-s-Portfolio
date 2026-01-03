@@ -14,34 +14,32 @@ const Experience = () => {
       subtitle="My professional journey and the companies I've worked with."
     >
       <div className="relative max-w-4xl mx-auto">
-        {/* Timeline Line */}
-        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-primary/20 transform md:-translate-x-1/2" />
+        {/* Timeline Line - always on left for mobile, center for desktop */}
+        <div className="absolute left-2 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-primary/20 md:transform md:-translate-x-1/2" />
 
         {/* Timeline Items */}
         {experience.map((job, index) => (
           <motion.div
             key={job.id}
-            className={`relative flex items-start gap-8 mb-12 ${
-              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-            }`}
+            className={`relative flex items-start gap-8 mb-12 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
             {/* Timeline Dot */}
-            <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-primary transform md:-translate-x-1/2 -translate-y-1 ring-4 ring-background z-10">
+            <div className="absolute left-0 md:left-1/2 w-3 h-3 md:w-4 md:h-4 rounded-full bg-primary md:transform md:-translate-x-1/2 -translate-y-1 ring-4 ring-background z-10">
               <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-30" />
             </div>
 
             {/* Content Card */}
             <div
-              className={`ml-8 md:ml-0 md:w-1/2 ${
-                index % 2 === 0 ? "md:pr-12" : "md:pl-12"
-              }`}
+              className={`ml-6 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"
+                }`}
             >
               <motion.div
-                className="glass rounded-xl p-6 hover:border-primary/30 transition-all duration-300"
+                className="glass rounded-xl p-4 sm:p-6 hover:border-primary/30 transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
               >
                 {/* Company & Role */}

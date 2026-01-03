@@ -20,7 +20,7 @@ const Projects = () => {
       subtitle="A selection of my recent work and personal projects."
       centered
     >
-      <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <AnimatePresence mode="popLayout">
           {displayedProjects.map((project, index) => (
             <motion.div
@@ -34,8 +34,8 @@ const Projects = () => {
               <Card className="group h-full flex flex-col">
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden bg-surface-elevated">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     onError={(e) => {
@@ -132,9 +132,8 @@ const Projects = () => {
             icon={
               <ChevronRight
                 size={18}
-                className={`transition-transform ${
-                  showAll ? "rotate-90" : ""
-                }`}
+                className={`transition-transform ${showAll ? "rotate-90" : ""
+                  }`}
               />
             }
             iconPosition="right"

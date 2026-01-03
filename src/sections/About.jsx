@@ -30,9 +30,9 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="relative">
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -left-4 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-4 -right-4 w-72 h-72 bg-secondary/20 rounded-full blur-3xl" />
+            {/* Decorative elements - hidden on mobile to prevent overflow */}
+            <div className="hidden md:block absolute -top-4 -left-4 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
+            <div className="hidden md:block absolute -bottom-4 -right-4 w-72 h-72 bg-secondary/20 rounded-full blur-3xl" />
 
             {/* Main Image Container */}
             <div className="relative glass rounded-2xl p-2 gradient-border">
@@ -56,9 +56,9 @@ const About = () => {
               </div>
             </div>
 
-            {/* Floating Badge */}
+            {/* Floating Badge - adjusted position for mobile */}
             <motion.div
-              className="absolute -right-4 top-1/4 glass rounded-xl px-4 py-3"
+              className="absolute -right-2 md:-right-4 top-1/4 glass rounded-xl px-3 py-2 md:px-4 md:py-3"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
@@ -93,7 +93,7 @@ const About = () => {
           </p>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}

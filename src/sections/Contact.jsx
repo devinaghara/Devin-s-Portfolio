@@ -49,7 +49,7 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    <div className="glass rounded-2xl p-8 h-full">
+                    <div className="glass rounded-2xl p-5 sm:p-8 h-full">
                         <h3 className="text-2xl font-semibold text-text-primary mb-6">
                             Let's Connect
                         </h3>
@@ -122,7 +122,7 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    <form onSubmit={handleSubmit} className="glass rounded-2xl p-8">
+                    <form onSubmit={handleSubmit} className="glass rounded-2xl p-5 sm:p-8">
                         <div className="space-y-6">
                             {/* Name Input */}
                             <div>
