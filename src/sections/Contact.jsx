@@ -1,32 +1,48 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Send, Loader2, CheckCircle } from "lucide-react";
+import emailjs from "@emailjs/browser"; // ✅ ADD THIS
 import { Section } from "../components/layout";
 import { Button } from "../components/ui";
 import { portfolioData } from "../data/portfolio";
 
 const Contact = () => {
     const { personal, social } = portfolioData;
+
     const [formState, setFormState] = useState({
         name: "",
         email: "",
         message: "",
     });
-    const [status, setStatus] = useState("idle"); // idle, loading, success, error
+
+    const [status, setStatus] = useState("idle");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus("loading");
 
-        // Simulate form submission
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-        setStatus("success");
+        try {
+            await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                {
+                    name: formState.name,
+                    email: formState.email,
+                    message: formState.message,
+                },
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
 
-        // Reset form after delay
-        setTimeout(() => {
+
+            setStatus("success");
             setFormState({ name: "", email: "", message: "" });
-            setStatus("idle");
-        }, 3000);
+
+            setTimeout(() => setStatus("idle"), 3000);
+
+        } catch (error) {
+            console.error("EmailJS Error:", error);
+            setStatus("error");
+        }
     };
 
     const handleChange = (e) => {
