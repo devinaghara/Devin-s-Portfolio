@@ -1,7 +1,4 @@
-/**
- * Portfolio Data - Centralized content management
- * Update this file to customize your portfolio content
- */
+import avatar from "../assets/IMG_0271.jpg";
 
 export const portfolioData = {
   // Personal Information
@@ -11,7 +8,7 @@ export const portfolioData = {
     tagline: "Building digital experiences that matter",
     bio: "I'm a passionate developer with 1 years of experience crafting beautiful, performant web applications. I specialize in React, Node.js,ASP.Net and modern technologies.",
     // avatar: "https://drive.google.com/uc?export=view&id=11nf5UR7lVHTUZd7INvA7cT07jJcvZE6j",
-    avatar: "./assets/IMG_0271.jpg",
+    avatar: avatar,
     resume: "https://drive.google.com/file/d/1XF2oP0ZfkDWhqrF0KViHcH6eBIcRMbal/view?usp=sharing",
     location: "Ahmedabad, Gujrat",
     email: "devinaghara4@gmail.com",
