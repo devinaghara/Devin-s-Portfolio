@@ -19,12 +19,12 @@ const App = () => {
     <>
       <Loader isLoading={isLoading} />
       
-      <div className={`min-h-screen bg-background text-text-primary ${isLoading ? 'overflow-hidden' : ''}`}>
+      <div className={`min-h-screen bg-background text-text-primary overflow-x-hidden ${isLoading ? 'overflow-hidden' : ''}`}>
         {/* Navigation */}
         <Navbar />
 
         {/* Main Content */}
-        <main>
+        <main className="overflow-x-hidden">
           <Hero />
           <About />
           <Skills />

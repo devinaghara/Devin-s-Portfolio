@@ -26,7 +26,7 @@ const Section = ({
   };
 
   return (
-    <section id={id} className={cn("section", className)}>
+    <section id={id} className={cn("section overflow-x-hidden", className)}>
       <div className="container">
         <motion.div
           ref={ref}
