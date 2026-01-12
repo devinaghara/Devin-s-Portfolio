@@ -1,28 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Footer } from "./components/layout";
 import { Hero, About, Skills, Projects, Experience, Education, Contact } from "./sections";
+import Loader from "./components/Loader";
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Show loader for 2.2 seconds (matches animation duration)
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2200);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background text-text-primary">
-      {/* Navigation */}
-      <Navbar />
+    <>
+      <Loader isLoading={isLoading} />
+      
+      <div className={`min-h-screen bg-background text-text-primary ${isLoading ? 'overflow-hidden' : ''}`}>
+        {/* Navigation */}
+        <Navbar />
 
-      {/* Main Content */}
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Education />
-        <Contact />
-      </main>
+        {/* Main Content */}
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Education />
+          <Contact />
+        </main>
 
-      {/* Footer */}
-      <Footer />
-    </div>
+        {/* Footer */}
+        <Footer />
+      </div>
+    </>
   );
 };
 
 export default App;
+
