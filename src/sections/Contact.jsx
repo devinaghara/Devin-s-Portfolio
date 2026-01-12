@@ -57,7 +57,7 @@ const Contact = () => {
             subtitle="Have a project in mind? Let's work together to bring your ideas to life."
             centered
         >
-            <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 {/* Contact Info */}
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}

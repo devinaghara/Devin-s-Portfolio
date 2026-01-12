@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Footer } from "./components/layout";
-import { Hero, About, Skills, Projects, Experience, Contact } from "./sections";
+import { Hero, About, Skills, Projects, Experience, Education, Contact } from "./sections";
 
 const App = () => {
   return (
@@ -15,6 +15,7 @@ const App = () => {
         <Skills />
         <Projects />
         <Experience />
+        <Education />
         <Contact />
       </main>
 

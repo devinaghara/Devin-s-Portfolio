@@ -30,6 +30,7 @@ export const portfolioData = {
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
+    { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
   ],
 
@@ -45,63 +46,64 @@ export const portfolioData = {
     { name: "AWS", level: 55, category: "Cloud" },
     { name: "Figma", level: 70, category: "Design" },
     { name: "Three.js", level: 70, category: "Frontend" },
+    { name: "Tailwind CSS", level: 70, category: "Design" },
   ],
 
   // Projects
   projects: [
-  {
-    id: 1,
-    title: "FitBuddy – AI-Powered Healthcare App",
-    description:
-      "A MERN-based healthcare application powered by Generative AI that provides personalized meal recommendations and secure medical record management. Designed to improve patient accessibility and healthcare efficiency.",
-    image: "https://res.cloudinary.com/ddxe0b0kf/image/upload/v1767382804/Gemini_Generated_Image_2s3qq32s3qq32s3q_j8mdt4.png",
-    technologies: [
-      "MongoDB",
-      "Express.js",
-      "React.js",
-      "Node.js",
-      "AWS S3",
-      "Generative AI",
-    ],
-    liveUrl: "",
-    githubUrl: "https://github.com/devinaghara/FitBuddy-Frontend",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "RB Hardware – E-Commerce Platform",
-    description:
-      "A full-stack MERN e-commerce platform built for managing hardware inventory, customer orders, and interactions. Includes an AI-powered helpdesk and a responsive UI for a seamless shopping experience.",
-    image: "https://res.cloudinary.com/ddxe0b0kf/image/upload/v1720876353/kctpqz4endnkue8lgsz6.jpg",
-    technologies: [
-      "MongoDB",
-      "Express.js",
-      "React.js",
-      "Node.js",
-      "AI Chatbot",
-    ],
-    liveUrl: "https://rbhardware.in",
-    githubUrl: "https://github.com/devinaghara/rbHardware",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Product Management System",
-    description:
-      "A robust product and invoice management system built using ASP.NET Core MVC. Features secure authentication, dynamic billing, and role-based access control for efficient business operations.",
-    image: "https://res.cloudinary.com/ddxe0b0kf/image/upload/v1767383000/Gemini_Generated_Image_i05w8fi05w8fi05w_rq1gxx.png",
-    technologies: [
-      "ASP.NET Core MVC",
-      "C#",
-      "SQL Server",
-      "JWT Authentication",
-      "Google Authentication",
-    ],
-    liveUrl: "https://partyproduct.runasp.net/Account/Login",
-    githubUrl: "https://github.com/devin-personal/ProductManagement",
-    featured: true,
-  },
-],
+    {
+      id: 1,
+      title: "FitBuddy – AI-Powered Healthcare App",
+      description:
+        "A MERN-based healthcare application powered by Generative AI that provides personalized meal recommendations and secure medical record management. Designed to improve patient accessibility and healthcare efficiency.",
+      image: "https://res.cloudinary.com/ddxe0b0kf/image/upload/v1767382804/Gemini_Generated_Image_2s3qq32s3qq32s3q_j8mdt4.png",
+      technologies: [
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "AWS S3",
+        "Generative AI",
+      ],
+      liveUrl: "",
+      githubUrl: "https://github.com/devinaghara/FitBuddy-Frontend",
+      featured: true,
+    },
+    {
+      id: 2,
+      title: "RB Hardware – E-Commerce Platform",
+      description:
+        "A full-stack MERN e-commerce platform built for managing hardware inventory, customer orders, and interactions. Includes an AI-powered helpdesk and a responsive UI for a seamless shopping experience.",
+      image: "https://res.cloudinary.com/ddxe0b0kf/image/upload/v1720876353/kctpqz4endnkue8lgsz6.jpg",
+      technologies: [
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "AI Chatbot",
+      ],
+      liveUrl: "https://rbhardware.in",
+      githubUrl: "https://github.com/devinaghara/rbHardware",
+      featured: true,
+    },
+    {
+      id: 3,
+      title: "Product Management System",
+      description:
+        "A robust product and invoice management system built using ASP.NET Core MVC. Features secure authentication, dynamic billing, and role-based access control for efficient business operations.",
+      image: "https://res.cloudinary.com/ddxe0b0kf/image/upload/v1767383000/Gemini_Generated_Image_i05w8fi05w8fi05w_rq1gxx.png",
+      technologies: [
+        "ASP.NET Core MVC",
+        "C#",
+        "SQL Server",
+        "JWT Authentication",
+        "Google Authentication",
+      ],
+      liveUrl: "https://partyproduct.runasp.net/Account/Login",
+      githubUrl: "https://github.com/devin-personal/ProductManagement",
+      featured: true,
+    },
+  ],
 
 
   // Work Experience
@@ -150,6 +152,29 @@ export const portfolioData = {
     },
   ],
 
+  // Education
+  education: [
+    {
+      id: 1,
+      institution: "Charotar University of Science and Technology (CHARUSAT)",
+      degree: "Bachelor of Technology in Computer Science and Engineering",
+      duration: "2022 - 2026",
+      location: "Changa, Gujarat",
+      description:
+        "Pursuing a comprehensive program in Computer Science with focus on software development, algorithms, and modern web technologies.",
+      grade: "CGPA: 8.57/10"
+    },
+    {
+      id: 2,
+      institution: "Modi School",
+      degree: "Higher Secondary (12th Grade) - Science",
+      duration: "2022",
+      location: "Rajkot, Gujarat",
+      description:
+        "Completed higher secondary education with Science stream focusing on Physics, Chemistry, and Mathematics.",
+      grade: "Percentage: 70%"
+    }
+  ],
 
   // Testimonials
   testimonials: [
