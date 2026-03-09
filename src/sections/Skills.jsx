@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 import { Section } from "../components/layout";
 import { portfolioData } from "../data/portfolio";
 import {
@@ -73,7 +74,13 @@ const Skills = () => {
       centered
     >
       {/* Category Filter - Pill Style */}
-      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 sm:mb-16">
+      <motion.div
+        className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 sm:mb-16"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <motion.button
           className={`relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all overflow-hidden ${activeCategory === "All"
             ? "text-white shadow-lg shadow-primary/30"
@@ -115,7 +122,7 @@ const Skills = () => {
             <span className="relative z-10">{category}</span>
           </motion.button>
         ))}
-      </div>
+      </motion.div>
 
       {/* Skills Grid - Unique Floating Card Design */}
       <motion.div
@@ -128,7 +135,8 @@ const Skills = () => {
               key={skill.name}
               layout
               initial={{ opacity: 0, y: 30, rotateX: -15 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
               exit={{ opacity: 0, scale: 0.8, y: -20 }}
               transition={{
                 duration: 0.4,
@@ -138,51 +146,69 @@ const Skills = () => {
               }}
               className="group perspective"
             >
-              <motion.div
-                className="relative h-full"
-                whileHover={{
-                  y: -4,
-                  transition: { duration: 0.2 }
-                }}
+              <Tilt
+                tiltMaxAngleX={20}
+                tiltMaxAngleY={20}
+                perspective={800}
+                scale={1.05}
+                transitionSpeed={400}
+                glareEnable={true}
+                glareMaxOpacity={0.18}
+                glareColor="#8b5cf6"
+                glarePosition="all"
+                glareBorderRadius="1rem"
+                className="h-full"
               >
-                {/* Card Container */}
-                <div className="relative glass rounded-2xl p-5 sm:p-6 h-full border border-white/10 group-hover:border-primary/40 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/10">
+                <div
+                  className="relative glass rounded-2xl p-5 sm:p-6 h-full border border-white/10 group-hover:border-primary/40 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/10"
+                  style={{ transformStyle: "preserve-3d" }}
+                >
                   
-                  {/* Tech Icon */}
-                  <motion.div
+                  {/* Tech Icon - 3D Pop Out */}
+                  <div
                     className="mb-4 relative"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
+                    style={{
+                      transform: "translateZ(50px)",
+                      transformStyle: "preserve-3d",
+                    }}
                   >
                     {(() => {
                       const IconComponent = techIcons[skill.name];
                       const iconColor = iconColors[skill.name] || "#8b5cf6";
                       return IconComponent ? (
                         <IconComponent
-                          className="w-10 h-10 sm:w-12 sm:h-12 transition-transform duration-200"
-                          style={{ color: iconColor }}
+                          className="w-10 h-10 sm:w-12 sm:h-12 transition-all duration-300 drop-shadow-lg"
+                          style={{
+                            color: iconColor,
+                            filter: `drop-shadow(0 4px 12px ${iconColor}55)`,
+                          }}
                         />
                       ) : (
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl">
+                        <div
+                          className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl shadow-lg"
+                        >
                           {skill.name.charAt(0)}
                         </div>
                       );
                     })()}
-                  </motion.div>
+                  </div>
 
                   {/* Skill Name */}
-                  <h4 className="text-base sm:text-lg font-bold text-text-primary group-hover:text-primary transition-colors duration-200">
+                  <h4
+                    className="text-base sm:text-lg font-bold text-text-primary group-hover:text-primary transition-colors duration-200"
+                    style={{ transform: "translateZ(25px)" }}
+                  >
                     {skill.name}
                   </h4>
 
                   {/* Category Badge */}
-                  <div className="mt-3">
+                  <div className="mt-3" style={{ transform: "translateZ(15px)" }}>
                     <span className="inline-block px-2.5 py-1 text-xs font-medium rounded-full bg-white/10 text-text-secondary">
                       {skill.category}
                     </span>
                   </div>
                 </div>
-              </motion.div>
+              </Tilt>
             </motion.div>
           ))}
         </AnimatePresence>
