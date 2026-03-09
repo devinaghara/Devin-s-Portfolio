@@ -109,6 +109,20 @@ export const portfolioData = {
   // Work Experience
   experience: [
     {
+      id: 4,
+      company: "Motorola Solutions",
+      role: "Trainee Intern",
+      duration: "Feb 2026 - Present",
+      location: "Bangalore, Karnataka",
+      description:
+        "Working with the Unified Communications (UC) team on automation and development initiatives to improve system monitoring, integrations, and operational efficiency within enterprise communication platforms.",
+      highlights: [
+        "Developing automation solutions to streamline operational workflows",
+        "Contributing to development and integration tasks within UC systems",
+        "Collaborating with cross-functional teams to enhance monitoring and reliability"
+      ],
+    },
+    {
       id: 1,
       company: "Weybee Solutions",
       role: "Software Engineer Intern",

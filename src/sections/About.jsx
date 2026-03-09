@@ -19,6 +19,7 @@ const About = () => {
       id="about"
       title="About Me"
       subtitle="Get to know me better - my journey, passion, and what drives me."
+      centered
     >
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Image/Avatar Side */}

@@ -12,6 +12,7 @@ const Experience = () => {
       id="experience"
       title="Work Experience"
       subtitle="My professional journey and the companies I've worked with."
+      centered
     >
       <div className="relative max-w-4xl mx-auto">
         {/* Timeline Line - always on left for mobile, center for desktop */}
