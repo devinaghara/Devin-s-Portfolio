@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Footer } from "./components/layout";
-import { Hero, About, Skills, Projects, Experience, Education, Contact } from "./sections";
+import { Hero, About, Skills, Projects, Experience, Education, Certifications, Contact } from "./sections";
 import Loader from "./components/Loader";
 
 const App = () => {
@@ -31,6 +31,7 @@ const App = () => {
           <Projects />
           <Experience />
           <Education />
+          <Certifications />
           <Contact />
         </main>
 

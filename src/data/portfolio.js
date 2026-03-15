@@ -31,6 +31,7 @@ export const portfolioData = {
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
     { name: "Education", href: "#education" },
+    { name: "Certifications", href: "#certifications" },
     { name: "Contact", href: "#contact" },
   ],
 
@@ -188,6 +189,42 @@ export const portfolioData = {
         "Completed higher secondary education with Science stream focusing on Physics, Chemistry, and Mathematics.",
       grade: "Percentage: 70%"
     }
+  ],
+
+  // Certifications
+  certifications: [
+    {
+      id: 1,
+      title: "Foundations of Project Management",
+      issuer: "Coursera (Google)",
+      date: "Mar 2026",
+      credentialUrl: "",
+      skills: ["Project Management", "Agile", "Planning"],
+    },
+    {
+      id: 2,
+      title: "Introduction to Prompt Engineering for Generative AI",
+      issuer: "LinkedIn Learning",
+      date: "Feb 2026",
+      credentialUrl: "",
+      skills: ["Prompt Engineering", "Generative AI", "LLMs"],
+    },
+    {
+      id: 3,
+      title: "Introduction to Artificial Intelligence",
+      issuer: "LinkedIn Learning",
+      date: "Feb 2026",
+      credentialUrl: "",
+      skills: ["Artificial Intelligence", "Machine Learning", "AI Fundamentals"],
+    },
+    {
+      id: 4,
+      title: "AWS Academy Graduate - AWS Academy Cloud Developing",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Feb 2025",
+      credentialUrl: "",
+      skills: ["AWS", "Cloud Development", "Cloud Architecture"],
+    },
   ],
 
   // Testimonials
