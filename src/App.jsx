@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import { Navbar, Footer } from "./components/layout";
 import { Hero, About, Skills, Projects, Experience, Education, Certifications, Contact } from "./sections";
+import { BackToTop } from "./components/ui";
 import Loader from "./components/Loader";
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
         <Navbar />
 
         {/* Main Content */}
-        <main className="overflow-x-hidden">
+        <main id="main-content" className="overflow-x-hidden">
           <Hero />
           <About />
           <Skills />
@@ -37,10 +38,12 @@ const App = () => {
 
         {/* Footer */}
         <Footer />
+
+        {/* Back to Top */}
+        <BackToTop />
       </div>
     </>
   );
 };
 
 export default App;
-

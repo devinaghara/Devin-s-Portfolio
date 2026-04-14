@@ -1,9 +1,11 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Download, MapPin } from "lucide-react";
-import { Scene } from "../components/three";
 import { Button, AnimatedText } from "../components/ui";
 import { portfolioData } from "../data/portfolio";
+
+// Lazy-load Three.js Scene — heaviest dependency, code-split for performance
+const Scene = lazy(() => import("../components/three/Scene"));
 
 const Hero = () => {
     const { personal } = portfolioData;
@@ -13,8 +15,10 @@ const Hero = () => {
             id="home"
             className="relative min-h-screen flex items-center justify-center overflow-hidden"
         >
-            {/* 3D Background */}
-            <Scene className="absolute inset-0 z-0" />
+            {/* 3D Background — lazy loaded */}
+            <Suspense fallback={<div className="absolute inset-0 z-0 bg-background" />}>
+              <Scene className="absolute inset-0 z-0" />
+            </Suspense>
 
             {/* Gradient Overlays */}
             <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background z-[1]" />

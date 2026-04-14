@@ -19,8 +19,8 @@ const Scene = ({ className }) => {
                     {/* Ambient lighting */}
                     <ambientLight intensity={0.5} />
 
-                    {/* Particle field background */}
-                    <ParticleField count={1500} />
+                    {/* Particle field background — reduced count for performance */}
+                    <ParticleField count={800} />
 
                     {/* Subtle fog for depth */}
                     <fog attach="fog" args={["#0a0a0f", 8, 20]} />

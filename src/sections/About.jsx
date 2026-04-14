@@ -87,10 +87,11 @@ const About = () => {
           </p>
 
           <p className="text-text-secondary mb-8 leading-relaxed">
-            When I'm not coding, you'll find me exploring new technologies,
-            contributing to open source projects, or sharing knowledge through
-            blog posts and mentoring. I believe in continuous learning and
-            pushing the boundaries of what's possible on the web.
+            From building AI-powered healthcare apps to developing full-stack
+            e-commerce platforms, I thrive on turning complex problems into
+            elegant solutions. Currently working with the Unified Communications
+            team at Motorola Solutions, I'm driven by a curiosity for emerging
+            technologies and a commitment to writing clean, maintainable code.
           </p>
 
           {/* Stats Grid */}

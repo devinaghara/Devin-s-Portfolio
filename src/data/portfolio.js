@@ -6,11 +6,11 @@ export const portfolioData = {
     name: "Devin Aghara",
     title: "Full Stack Developer",
     tagline: "Building digital experiences that matter",
-    bio: "I'm a passionate developer with 1 years of experience crafting beautiful, performant web applications. I specialize in React, Node.js,ASP.Net and modern technologies.",
+    bio: "I'm a passionate developer with 1+ year of experience crafting beautiful, performant web applications. I specialize in React, Node.js,ASP.Net and modern technologies.",
     // avatar: "https://drive.google.com/uc?export=view&id=11nf5UR7lVHTUZd7INvA7cT07jJcvZE6j",
     avatar: avatar,
     resume: "https://drive.google.com/file/d/1XF2oP0ZfkDWhqrF0KViHcH6eBIcRMbal/view?usp=sharing",
-    location: "Ahmedabad, Gujrat",
+    location: "Ahmedabad, Gujarat",
     email: "devinaghara4@gmail.com",
     phone: "+91 9328861509",
     availability: "Open to opportunities",
@@ -227,25 +227,8 @@ export const portfolioData = {
     },
   ],
 
-  // Testimonials
-  testimonials: [
-    {
-      id: 1,
-      name: "Sarah Johnson",
-      role: "CTO at StartupXYZ",
-      avatar: "/testimonials/sarah.jpg",
-      content:
-        "Alex is an exceptional developer who consistently delivers high-quality work. Their attention to detail and problem-solving skills are outstanding.",
-    },
-    {
-      id: 2,
-      name: "Michael Brown",
-      role: "Product Manager at TechCorp",
-      avatar: "/testimonials/michael.jpg",
-      content:
-        "Working with Alex has been a pleasure. They understand both the technical and business aspects, making them invaluable to any team.",
-    },
-  ],
+  // Testimonials - Add real testimonials here when available
+  // testimonials: [],
 };
 
 export default portfolioData;
