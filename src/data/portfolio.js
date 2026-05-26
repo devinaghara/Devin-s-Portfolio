@@ -4,13 +4,13 @@ export const portfolioData = {
   // Personal Information
   personal: {
     name: "Devin Aghara",
-    title: "Full Stack Developer",
-    tagline: "Building digital experiences that matter",
-    bio: "I'm a passionate developer with 1+ year of experience crafting beautiful, performant web applications. I specialize in React, Node.js,ASP.Net and modern technologies.",
-    // avatar: "https://drive.google.com/uc?export=view&id=11nf5UR7lVHTUZd7INvA7cT07jJcvZE6j",
+    title: "Software Engineer | Full Stack Developer",
+    tagline: "Building scalable digital experiences and backend systems",
+    bio: "Full Stack Developer passionate about building scalable web applications, backend systems, and modern digital experiences. Experienced with MERN Stack, ASP.NET Core MVC, Microservices Architecture, and CI/CD workflows through internships at Motorola Solutions and other industry projects.",
     avatar: avatar,
-    resume: "https://drive.google.com/file/d/1XF2oP0ZfkDWhqrF0KViHcH6eBIcRMbal/view?usp=sharing",
-    location: "Ahmedabad, Gujarat",
+    resume:
+      "https://drive.google.com/file/d/1XF2oP0ZfkDWhqrF0KViHcH6eBIcRMbal/view?usp=sharing",
+    location: "Bengaluru, Karnataka",
     email: "devinaghara4@gmail.com",
     phone: "+91 9328861509",
     availability: "Open to opportunities",
@@ -20,7 +20,8 @@ export const portfolioData = {
   social: {
     github: "https://github.com/devinaghara",
     linkedin: "https://www.linkedin.com/in/devin-aghara/",
-    twitter: "https://twitter.com/devinaghara",
+    // portfolio: "",
+    leetcode: "https://leetcode.com/u/devinaghara/",
   },
 
   // Navigation Links
@@ -35,19 +36,52 @@ export const portfolioData = {
     { name: "Contact", href: "#contact" },
   ],
 
+  // Focus Areas
+  focusAreas: [
+    "Backend Engineering",
+    "Microservices Architecture",
+    "CI/CD Automation",
+    "Scalable System Design",
+  ],
+
   // Skills
   skills: [
-    { name: "React", level: 95, category: "Frontend" },
-    { name: "ASP.Net MVC", level: 90, category: "Frontend" },
+    // Frontend
+    { name: "React.js", level: 95, category: "Frontend" },
+    { name: "Tailwind CSS", level: 90, category: "Frontend" },
+    { name: "Shadcn UI", level: 80, category: "Frontend" },
+    { name: "Three.js", level: 70, category: "Frontend" },
+
+    // Backend
+    { name: "Node.js", level: 90, category: "Backend" },
+    { name: "Express.js", level: 90, category: "Backend" },
+    { name: "ASP.NET Core MVC", level: 90, category: "Backend" },
+    { name: "REST APIs", level: 90, category: "Backend" },
+
+    // Database
+    { name: "MongoDB", level: 85, category: "Database" },
+    { name: "MySQL", level: 80, category: "Database" },
+    { name: "SQL Server", level: 80, category: "Database" },
+
+    // DevOps & Architecture
+    { name: "Docker", level: 75, category: "DevOps" },
+    { name: "GitHub Actions", level: 70, category: "DevOps" },
+    { name: "Microservices", level: 80, category: "Architecture" },
+
+    // Cloud
+    { name: "AWS S3", level: 65, category: "Cloud" },
+
+    // Languages
     { name: "JavaScript", level: 95, category: "Languages" },
     { name: "C#", level: 90, category: "Languages" },
-    { name: "Node.js", level: 85, category: "Backend" },
-    { name: "MySQL", level: 80, category: "Database" },
-    { name: "MongoDB", level: 80, category: "Database" },
-    { name: "AWS", level: 55, category: "Cloud" },
-    { name: "Figma", level: 70, category: "Design" },
-    { name: "Three.js", level: 70, category: "Frontend" },
-    { name: "Tailwind CSS", level: 70, category: "Design" },
+    { name: "Python", level: 75, category: "Languages" },
+    { name: "SQL", level: 80, category: "Languages" },
+
+    // Tools
+    { name: "Git", level: 90, category: "Tools" },
+    { name: "GitHub", level: 90, category: "Tools" },
+    { name: "Postman", level: 85, category: "Tools" },
+    { name: "Socket.IO", level: 70, category: "Tools" },
   ],
 
   // Projects
@@ -56,8 +90,9 @@ export const portfolioData = {
       id: 1,
       title: "FitBuddy – AI-Powered Healthcare App",
       description:
-        "A MERN-based healthcare application powered by Generative AI that provides personalized meal recommendations and secure medical record management. Designed to improve patient accessibility and healthcare efficiency.",
-      image: "https://res.cloudinary.com/ddxe0b0kf/image/upload/v1767382804/Gemini_Generated_Image_2s3qq32s3qq32s3q_j8mdt4.png",
+        "AI-powered healthcare platform built with MERN Stack that delivers personalized meal recommendations using Generative AI. Implemented secure medical record management with AWS S3 and QR-based patient history access for improved healthcare accessibility.",
+      image:
+        "https://res.cloudinary.com/ddxe0b0kf/image/upload/v1767382804/Gemini_Generated_Image_2s3qq32s3qq32s3q_j8mdt4.png",
       technologies: [
         "MongoDB",
         "Express.js",
@@ -70,12 +105,14 @@ export const portfolioData = {
       githubUrl: "https://github.com/devinaghara/FitBuddy-Frontend",
       featured: true,
     },
+
     {
       id: 2,
       title: "RB Hardware – E-Commerce Platform",
       description:
-        "A full-stack MERN e-commerce platform built for managing hardware inventory, customer orders, and interactions. Includes an AI-powered helpdesk and a responsive UI for a seamless shopping experience.",
-      image: "https://res.cloudinary.com/ddxe0b0kf/image/upload/v1720876353/kctpqz4endnkue8lgsz6.jpg",
+        "Full-stack MERN e-commerce platform for hardware inventory and order management. Built responsive customer experience with AI-powered support system, authentication, and scalable backend APIs.",
+      image:
+        "https://res.cloudinary.com/ddxe0b0kf/image/upload/v1720876353/kctpqz4endnkue8lgsz6.jpg",
       technologies: [
         "MongoDB",
         "Express.js",
@@ -87,12 +124,14 @@ export const portfolioData = {
       githubUrl: "https://github.com/devinaghara/rbHardware",
       featured: true,
     },
+
     {
       id: 3,
       title: "Product Management System",
       description:
-        "A robust product and invoice management system built using ASP.NET Core MVC. Features secure authentication, dynamic billing, and role-based access control for efficient business operations.",
-      image: "https://res.cloudinary.com/ddxe0b0kf/image/upload/v1767383000/Gemini_Generated_Image_i05w8fi05w8fi05w_rq1gxx.png",
+        "Enterprise-style product and invoice management system built using ASP.NET Core MVC with JWT and Google Authentication. Includes customer management, billing workflows, and role-based secure access.",
+      image:
+        "https://res.cloudinary.com/ddxe0b0kf/image/upload/v1767383000/Gemini_Generated_Image_i05w8fi05w8fi05w_rq1gxx.png",
       technologies: [
         "ASP.NET Core MVC",
         "C#",
@@ -106,63 +145,66 @@ export const portfolioData = {
     },
   ],
 
-
   // Work Experience
   experience: [
     {
-      id: 4,
+      id: 1,
       company: "Motorola Solutions",
       role: "Trainee Intern",
       duration: "Feb 2026 - Present",
-      location: "Bangalore, Karnataka",
+      location: "Bengaluru, Karnataka",
       description:
         "Working with the Unified Communications (UC) team on automation and development initiatives to improve system monitoring, integrations, and operational efficiency within enterprise communication platforms.",
       highlights: [
-        "Developing automation solutions to streamline operational workflows",
-        "Contributing to development and integration tasks within UC systems",
-        "Collaborating with cross-functional teams to enhance monitoring and reliability"
+        "Developing automation tools to reduce manual operational workflows",
+        "Working on monitoring and integration solutions within Unified Communications systems",
+        "Collaborating with enterprise teams to improve reliability and operational efficiency",
+        "Learning CI/CD workflows and scalable enterprise architecture practices",
       ],
     },
+
     {
-      id: 1,
+      id: 2,
       company: "Weybee Solutions",
       role: "Software Engineer Intern",
       duration: "Aug 2025 - Dec 2025",
       location: "Ahmedabad, Gujarat",
       description:
-        "Worked on developing scalable web applications using ASP.NET Core and MVC architecture, focusing on clean backend design and performance.",
+        "Worked on developing scalable web applications using ASP.NET Core MVC architecture, focusing on backend engineering and database-driven systems.",
       highlights: [
         "Developed backend logic and controllers using ASP.NET Core MVC",
         "Implemented SQL database-driven features following industry best practices",
-        "Gained hands-on experience with scalable application architecture",
+        "Worked on scalable backend architecture and clean code practices",
       ],
     },
+
     {
-      id: 2,
+      id: 3,
       company: "Undergraduate Student Fellowship (UGSF)",
       role: "Student Research Fellow",
       duration: "Sep 2024 - Apr 2025",
       location: "India",
       description:
-        "Awarded a UGSF scholarship to work on an innovative project under faculty mentorship, focusing on practical problem-solving and research-driven development.",
+        "Worked under faculty mentorship on innovative research-driven software solutions focused on solving real-world problems.",
       highlights: [
-        "Worked under direct faculty mentorship on an innovative project",
-        "Applied software engineering concepts to real-world problem statements",
-        "Strengthened research, documentation, and presentation skills",
+        "Applied software engineering concepts to practical problem statements",
+        "Worked on research-driven project development",
+        "Strengthened technical documentation and presentation skills",
       ],
     },
+
     {
-      id: 3,
+      id: 4,
       company: "Mayora Infotech",
       role: "Frontend Developer Intern",
       duration: "May 2024 - Jun 2024",
       location: "India",
       description:
-        "Focused on building responsive and user-friendly interfaces using modern frontend technologies, collaborating closely with designers and backend teams.",
+        "Focused on building responsive and user-friendly frontend interfaces using React.js and modern frontend technologies.",
       highlights: [
-        "Designed and implemented responsive UI using React.js",
-        "Integrated APIs with frontend components for seamless data flow",
-        "Improved development speed and feature delivery through collaboration",
+        "Designed responsive UI components using React.js",
+        "Integrated frontend with backend APIs",
+        "Improved feature delivery through collaborative development",
       ],
     },
   ],
@@ -171,14 +213,17 @@ export const portfolioData = {
   education: [
     {
       id: 1,
-      institution: "Charotar University of Science and Technology (CHARUSAT)",
-      degree: "Bachelor of Technology in Computer Science and Engineering",
+      institution:
+        "Charotar University of Science and Technology (CHARUSAT)",
+      degree:
+        "Bachelor of Technology in Computer Science and Engineering",
       duration: "2022 - 2026",
       location: "Changa, Gujarat",
       description:
-        "Pursuing a comprehensive program in Computer Science with focus on software development, algorithms, and modern web technologies.",
-      grade: "CGPA: 8.57/10"
+        "Pursuing Computer Science Engineering with focus on software engineering, scalable systems, backend development, and modern web technologies.",
+      grade: "CGPA: 8.72/10",
     },
+
     {
       id: 2,
       institution: "Modi School",
@@ -186,9 +231,9 @@ export const portfolioData = {
       duration: "2022",
       location: "Rajkot, Gujarat",
       description:
-        "Completed higher secondary education with Science stream focusing on Physics, Chemistry, and Mathematics.",
-      grade: "Percentage: 70%"
-    }
+        "Completed higher secondary education with Physics, Chemistry, and Mathematics.",
+      grade: "Percentage: 70%",
+    },
   ],
 
   // Certifications
@@ -201,6 +246,7 @@ export const portfolioData = {
       credentialUrl: "",
       skills: ["Project Management", "Agile", "Planning"],
     },
+
     {
       id: 2,
       title: "Introduction to Prompt Engineering for Generative AI",
@@ -209,14 +255,20 @@ export const portfolioData = {
       credentialUrl: "",
       skills: ["Prompt Engineering", "Generative AI", "LLMs"],
     },
+
     {
       id: 3,
       title: "Introduction to Artificial Intelligence",
       issuer: "LinkedIn Learning",
       date: "Feb 2026",
       credentialUrl: "",
-      skills: ["Artificial Intelligence", "Machine Learning", "AI Fundamentals"],
+      skills: [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "AI Fundamentals",
+      ],
     },
+
     {
       id: 4,
       title: "AWS Academy Graduate - AWS Academy Cloud Developing",
@@ -227,8 +279,24 @@ export const portfolioData = {
     },
   ],
 
-  // Testimonials - Add real testimonials here when available
-  // testimonials: [],
+  // Leadership & Activities
+  leadership: [
+    {
+      id: 1,
+      title: "Training & Placement Coordinator",
+      organization: "CHARUSAT",
+      description:
+        "Coordinated placement activities and communication between students and recruiters.",
+    },
+
+    {
+      id: 2,
+      title: "Event Coordinator",
+      organization: "University Events",
+      description:
+        "Managed and coordinated university technical and cultural events including Cognizance and Spoural.",
+    },
+  ],
 };
 
 export default portfolioData;

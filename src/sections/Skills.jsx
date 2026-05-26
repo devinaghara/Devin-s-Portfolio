@@ -14,46 +14,109 @@ import {
   SiFigma,
   SiThreedotjs,
   SiTailwindcss,
+  SiShadcnui,
+  SiExpress,
+  SiDocker,
+  SiGithubactions,
+  SiAmazons3,
+  SiPython,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiSocketdotio,
+  SiSwagger,
 } from "react-icons/si";
-import { TbBrandCSharp } from "react-icons/tb";
+import { TbBrandCSharp, TbFileTypeSql, TbServer } from "react-icons/tb";
 // Technology icons mapping using actual technology icons
 const techIcons = {
-  "React": SiReact,
-  "ASP.Net MVC": SiDotnet,
-  "JavaScript": SiJavascript,
-  "C#": TbBrandCSharp,
-  "Node.js": SiNodedotjs,
-  "MySQL": SiMysql,
-  "MongoDB": SiMongodb,
-  "AWS": SiAmazonwebservices,
-  "Figma": SiFigma,
-  "Three.js": SiThreedotjs,
+  // Frontend
+  "React.js": SiReact,
   "Tailwind CSS": SiTailwindcss,
+  "Shadcn UI": SiShadcnui,
+  "Three.js": SiThreedotjs,
+
+  // Backend
+  "Node.js": SiNodedotjs,
+  "Express.js": SiExpress,
+  "ASP.NET Core MVC": SiDotnet,
+  "REST APIs": SiSwagger,
+
+  // Database
+  MongoDB: SiMongodb,
+  MySQL: SiMysql,
+  "SQL Server": TbServer,
+
+  // DevOps & Architecture
+  Docker: SiDocker,
+  "GitHub Actions": SiGithubactions,
+  Microservices: TbServer,
+
+  // Cloud
+  "AWS S3": SiAmazons3,
+  AWS: SiAmazonwebservices,
+
+  // Languages
+  JavaScript: SiJavascript,
+  "C#": TbBrandCSharp,
+  Python: SiPython,
+  SQL: TbFileTypeSql,
+
+  // Tools
+  Git: SiGit,
+  GitHub: SiGithub,
+  Postman: SiPostman,
+  "Socket.IO": SiSocketdotio,
+
+  // Legacy keys (kept for backward compat)
+  React: SiReact,
+  "ASP.Net MVC": SiDotnet,
+  Figma: SiFigma,
 };
 
 // Icon colors for each technology
 const iconColors = {
-  "React": "#61DAFB",
-  "ASP.Net MVC": "#512BD4",
-  "JavaScript": "#F7DF1E",
-  "C#": "#239120",
-  "Node.js": "#339933",
-  "MySQL": "#4479A1",
-  "MongoDB": "#47A248",
-  "AWS": "#FF9900",
-  "Figma": "#F24E1E",
-  "Three.js": "#000000",
-  "Tailwind CSS": "#0da6ecff",
-};
+  // Frontend
+  "React.js": "#61DAFB",
+  "Tailwind CSS": "#06B6D4",
+  "Shadcn UI": "#ffffff",
+  "Three.js": "#049EF4",
 
-// Category colors for visual distinction
-const categoryColors = {
-  "Frontend": "from-cyan-500 to-blue-500",
-  "Backend": "from-green-500 to-emerald-500",
-  "Languages": "from-yellow-500 to-orange-500",
-  "Database": "from-purple-500 to-pink-500",
-  "Cloud": "from-sky-500 to-indigo-500",
-  "Design": "from-rose-500 to-red-500",
+  // Backend
+  "Node.js": "#339933",
+  "Express.js": "#ffffff",
+  "ASP.NET Core MVC": "#512BD4",
+  "REST APIs": "#85EA2D",
+
+  // Database
+  MongoDB: "#47A248",
+  MySQL: "#4479A1",
+  "SQL Server": "#CC2927",
+
+  // DevOps & Architecture
+  Docker: "#2496ED",
+  "GitHub Actions": "#2088FF",
+  Microservices: "#8b5cf6",
+
+  // Cloud
+  "AWS S3": "#FF9900",
+  AWS: "#FF9900",
+
+  // Languages
+  JavaScript: "#F7DF1E",
+  "C#": "#239120",
+  Python: "#3776AB",
+  SQL: "#e38c00",
+
+  // Tools
+  Git: "#F05032",
+  GitHub: "#ffffff",
+  Postman: "#FF6C37",
+  "Socket.IO": "#ffffff",
+
+  // Legacy keys
+  React: "#61DAFB",
+  "ASP.Net MVC": "#512BD4",
+  Figma: "#F24E1E",
 };
 
 const Skills = () => {
@@ -82,10 +145,11 @@ const Skills = () => {
         transition={{ duration: 0.5 }}
       >
         <motion.button
-          className={`relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all overflow-hidden ${activeCategory === "All"
-            ? "text-white shadow-lg shadow-primary/30"
-            : "glass text-text-secondary hover:text-primary"
-            }`}
+          className={`relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all overflow-hidden ${
+            activeCategory === "All"
+              ? "text-white shadow-lg shadow-primary/30"
+              : "glass text-text-secondary hover:text-primary"
+          }`}
           onClick={() => setActiveCategory("All")}
           whileHover={{ scale: 1.05, y: -2 }}
           whileTap={{ scale: 0.95 }}
@@ -103,10 +167,11 @@ const Skills = () => {
         {categories.map((category) => (
           <motion.button
             key={category}
-            className={`relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all overflow-hidden ${activeCategory === category
-              ? "text-white shadow-lg shadow-primary/30"
-              : "glass text-text-secondary hover:text-primary"
-              }`}
+            className={`relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all overflow-hidden ${
+              activeCategory === category
+                ? "text-white shadow-lg shadow-primary/30"
+                : "glass text-text-secondary hover:text-primary"
+            }`}
             onClick={() => setActiveCategory(category)}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -142,7 +207,7 @@ const Skills = () => {
                 duration: 0.4,
                 delay: index * 0.08,
                 type: "spring",
-                stiffness: 200
+                stiffness: 200,
               }}
               className="group perspective"
             >
@@ -163,7 +228,6 @@ const Skills = () => {
                   className="relative glass rounded-2xl p-5 sm:p-6 h-full border border-white/10 group-hover:border-primary/40 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/10"
                   style={{ transformStyle: "preserve-3d" }}
                 >
-                  
                   {/* Tech Icon - 3D Pop Out */}
                   <div
                     className="mb-4 relative"
@@ -184,9 +248,7 @@ const Skills = () => {
                           }}
                         />
                       ) : (
-                        <div
-                          className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl shadow-lg"
-                        >
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl shadow-lg">
                           {skill.name.charAt(0)}
                         </div>
                       );
@@ -202,7 +264,10 @@ const Skills = () => {
                   </h4>
 
                   {/* Category Badge */}
-                  <div className="mt-3" style={{ transform: "translateZ(15px)" }}>
+                  <div
+                    className="mt-3"
+                    style={{ transform: "translateZ(15px)" }}
+                  >
                     <span className="inline-block px-2.5 py-1 text-xs font-medium rounded-full bg-white/10 text-text-secondary">
                       {skill.category}
                     </span>

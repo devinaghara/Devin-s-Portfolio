@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Send, Loader2, CheckCircle } from "lucide-react";
-import emailjs from "@emailjs/browser"; // ✅ ADD THIS
+import { SiGithub, SiLinkedin, SiLeetcode } from "react-icons/si";
+import emailjs from "@emailjs/browser";
 import { Section } from "../components/layout";
 import { Button } from "../components/ui";
 import { portfolioData } from "../data/portfolio";
@@ -113,19 +114,41 @@ const Contact = () => {
                         <div>
                             <p className="text-sm text-text-muted mb-4">Find me on</p>
                             <div className="flex gap-3">
-                                {Object.entries(social).map(([platform, url]) => (
-                                    <motion.a
-                                        key={platform}
-                                        href={url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-3 rounded-lg bg-surface border border-border text-text-secondary hover:text-primary hover:border-primary transition-all capitalize"
-                                        whileHover={{ scale: 1.1, y: -2 }}
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        {platform}
-                                    </motion.a>
-                                ))}
+                                {Object.entries(social)
+                                    .filter(([, url]) => url && !url.startsWith("/"))
+                                    .map(([platform, url]) => {
+                                        const iconMap = {
+                                            github: { Icon: SiGithub, color: "#ffffff", label: "GitHub" },
+                                            linkedin: { Icon: SiLinkedin, color: "#0A66C2", label: "LinkedIn" },
+                                            leetcode: { Icon: SiLeetcode, color: "#FFA116", label: "LeetCode" },
+                                        };
+                                        const entry = iconMap[platform];
+                                        if (!entry) return null;
+                                        const { Icon, color, label } = entry;
+                                        return (
+                                            <motion.a
+                                                key={platform}
+                                                href={url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                title={label}
+                                                aria-label={label}
+                                                className="relative p-3 rounded-lg bg-surface border border-border text-text-secondary hover:border-primary transition-all group"
+                                                whileHover={{ scale: 1.12, y: -3 }}
+                                                whileTap={{ scale: 0.95 }}
+                                            >
+                                                <Icon
+                                                    size={22}
+                                                    className="transition-all duration-200 group-hover:drop-shadow-lg"
+                                                    style={{ color }}
+                                                />
+                                                {/* Tooltip */}
+                                                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs bg-surface-elevated border border-border text-text-secondary px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                                                    {label}
+                                                </span>
+                                            </motion.a>
+                                        );
+                                    })}
                             </div>
                         </div>
                     </div>
