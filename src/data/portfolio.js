@@ -9,7 +9,7 @@ export const portfolioData = {
     bio: "Full Stack Developer passionate about building scalable web applications, backend systems, and modern digital experiences. Experienced with MERN Stack, ASP.NET Core MVC, Microservices Architecture, and CI/CD workflows through internships at Motorola Solutions and other industry projects.",
     avatar: avatar,
     resume:
-      "https://drive.google.com/file/d/1XF2oP0ZfkDWhqrF0KViHcH6eBIcRMbal/view?usp=sharing",
+      "https://drive.google.com/file/d/1X39NcgJVzYiD1yrNA72mN01mRV1DhPM0/view?usp=sharing",
     location: "Bengaluru, Karnataka",
     email: "devinaghara4@gmail.com",
     phone: "+91 9328861509",
@@ -88,6 +88,26 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
+      title: "AI-Powered Root Cause Analysis (RCA)",
+      description:
+        "Intelligent RCA automation solution integrated into the existing automation execution pipeline at Motorola Solutions to eliminate manual failure investigation. Automated extraction of failure reasons, timestamps, screenshots, artifacts, and logs from automation test executions. Integrated Generative AI to analyze failure logs and generate contextual root cause summaries, enabling faster troubleshooting and decision-making.",
+      image:"https://res.cloudinary.com/ddxe0b0kf/image/upload/v1780427761/Gemini_Generated_Image_mua6jomua6jomua6_yez0xm.png",
+      technologies: [
+        "Generative AI",
+        "Python",
+        "Automation",
+        "CI/CD",
+        "Log Analysis",
+        "RCA Reports",
+      ],
+      liveUrl: "",
+      githubUrl: "",
+      featured: true,
+      company: "Motorola Solutions",
+    },
+
+    {
+      id: 2,
       title: "FitBuddy – AI-Powered Healthcare App",
       description:
         "AI-powered healthcare platform built with MERN Stack that delivers personalized meal recommendations using Generative AI. Implemented secure medical record management with AWS S3 and QR-based patient history access for improved healthcare accessibility.",
@@ -107,7 +127,7 @@ export const portfolioData = {
     },
 
     {
-      id: 2,
+      id: 3,
       title: "RB Hardware – E-Commerce Platform",
       description:
         "Full-stack MERN e-commerce platform for hardware inventory and order management. Built responsive customer experience with AI-powered support system, authentication, and scalable backend APIs.",
@@ -126,7 +146,7 @@ export const portfolioData = {
     },
 
     {
-      id: 3,
+      id: 4,
       title: "Product Management System",
       description:
         "Enterprise-style product and invoice management system built using ASP.NET Core MVC with JWT and Google Authentication. Includes customer management, billing workflows, and role-based secure access.",
@@ -141,7 +161,7 @@ export const portfolioData = {
       ],
       liveUrl: "https://partyproduct.runasp.net/Account/Login",
       githubUrl: "https://github.com/devin-personal/ProductManagement",
-      featured: true,
+      featured: false,
     },
   ],
 
@@ -213,10 +233,8 @@ export const portfolioData = {
   education: [
     {
       id: 1,
-      institution:
-        "Charotar University of Science and Technology (CHARUSAT)",
-      degree:
-        "Bachelor of Technology in Computer Science and Engineering",
+      institution: "Charotar University of Science and Technology (CHARUSAT)",
+      degree: "Bachelor of Technology in Computer Science and Engineering",
       duration: "2022 - 2026",
       location: "Changa, Gujarat",
       description:

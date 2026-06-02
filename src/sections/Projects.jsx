@@ -10,9 +10,7 @@ const Projects = () => {
   const { projects } = portfolioData;
   const [showAll, setShowAll] = useState(false);
 
-  const displayedProjects = showAll
-    ? projects
-    : projects.filter((p) => p.featured);
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
     <Section
@@ -93,6 +91,15 @@ const Projects = () => {
                         )}
                       </div>
                     </div>
+
+                    {/* Company Badge for professional projects */}
+                    {project.company && (
+                      <div className="absolute top-3 left-3">
+                        <Badge variant="secondary" size="sm">
+                          {project.company}
+                        </Badge>
+                      </div>
+                    )}
 
                     {/* Featured Badge */}
                     {project.featured && (
