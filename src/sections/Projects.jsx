@@ -1,169 +1,130 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Tilt from "react-parallax-tilt";
-import { ExternalLink, Github, ChevronRight } from "lucide-react";
+import { ExternalLink, Github, ChevronRight, Terminal } from "lucide-react";
 import { Section } from "../components/layout";
-import { Card, Badge, Button } from "../components/ui";
 import { portfolioData } from "../data/portfolio";
+import HoloCard, { LBrackets, ScanBeam, Scanlines } from "../components/ui/HoloCard";
+
+const PROJ_ACCENTS = ["#8b5cf6", "#06b6d4", "#f472b6", "#34d399"];
 
 const Projects = () => {
   const { projects } = portfolioData;
   const [showAll, setShowAll] = useState(false);
-
-  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+  const displayed = showAll ? projects : projects.slice(0, 3);
 
   return (
-    <Section
-      id="projects"
-      title="Featured Projects"
-      subtitle="A selection of my recent work and personal projects."
-      centered
-    >
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+    <Section id="projects" title="Featured Projects" subtitle="A selection of my recent work and personal projects." centered>
+
+      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <AnimatePresence mode="popLayout">
-          {displayedProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              layout
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
-              <Tilt
-                tiltMaxAngleX={12}
-                tiltMaxAngleY={12}
-                perspective={1000}
-                scale={1.03}
-                transitionSpeed={400}
-                glareEnable={true}
-                glareMaxOpacity={0.12}
-                glareColor="#8b5cf6"
-                glarePosition="all"
-                glareBorderRadius="0.75rem"
-                className="h-full"
-              >
-                <Card className="group h-full flex flex-col">
-                  {/* Project Image */}
-                  <div className="relative h-48 overflow-hidden bg-surface-elevated">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
+          {displayed.map((project, index) => {
+            const accent = PROJ_ACCENTS[index % 4];
+            return (
+              <motion.div key={project.id} layout
+                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }} exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.45, delay: index * 0.1 }}>
+
+                {/* Manual holo card with image header */}
+                <motion.div className="group relative overflow-hidden rounded-lg flex flex-col h-full"
+                  style={{ background: "rgba(8,8,18,0.92)", border: `1px solid ${accent}30` }}
+                  whileHover={{ boxShadow: `0 0 0 1px ${accent}55, 0 8px 48px ${accent}20`, transition: { duration: 0.3 } }}>
+
+                  <LBrackets color={accent} size={12} />
+                  <ScanBeam accent={accent} delay={index * 1.2} />
+
+                  {/* Image */}
+                  <div className="relative h-44 overflow-hidden bg-surface-elevated flex-shrink-0">
+                    <img src={project.image} alt={project.title} loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onError={(e) => { e.target.style.display = "none"; e.target.nextSibling.style.display = "flex"; }}
                     />
-                    {/* Fallback placeholder */}
-                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center absolute inset-0" style={{ display: 'none' }}>
-                      <span className="text-4xl opacity-50">🚀</span>
+                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 items-center justify-center absolute inset-0" style={{ display: "none" }}>
+                      <span className="text-4xl opacity-40">🚀</span>
                     </div>
 
-                    {/* Overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                      <div className="flex gap-3">
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#08081200] via-[#08081240] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
+                      <div className="flex gap-2">
                         {project.liveUrl && (
-                          <motion.a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 rounded-full glass hover:bg-primary transition-colors"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                          >
-                            <ExternalLink size={18} />
+                          <motion.a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
+                            className="flex items-center gap-1 font-mono text-xs px-3 py-1.5 rounded"
+                            style={{ background: `${accent}20`, color: accent, border: `1px solid ${accent}40` }}
+                            whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                            <ExternalLink size={11} /> live
                           </motion.a>
                         )}
                         {project.githubUrl && (
-                          <motion.a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 rounded-full glass hover:bg-primary transition-colors"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                          >
-                            <Github size={18} />
+                          <motion.a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
+                            className="flex items-center gap-1 font-mono text-xs px-3 py-1.5 rounded"
+                            style={{ background: "rgba(255,255,255,0.08)", color: "#94a3b8", border: "1px solid rgba(255,255,255,0.1)" }}
+                            whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                            <Github size={11} /> repo
                           </motion.a>
                         )}
                       </div>
                     </div>
 
-                    {/* Company Badge for professional projects */}
+                    {/* Badges */}
                     {project.company && (
-                      <div className="absolute top-3 left-3">
-                        <Badge variant="secondary" size="sm">
+                      <div className="absolute top-2 left-2">
+                        <span className="font-mono text-xs px-2 py-1 rounded" style={{ background: "rgba(139,92,246,0.2)", color: "#a78bfa", border: "1px solid rgba(139,92,246,0.3)" }}>
                           {project.company}
-                        </Badge>
+                        </span>
                       </div>
                     )}
-
-                    {/* Featured Badge */}
                     {project.featured && (
-                      <div className="absolute top-3 right-3">
-                        <Badge variant="primary" size="sm">
-                          Featured
-                        </Badge>
+                      <div className="absolute top-2 right-2">
+                        <span className="font-mono text-xs px-2 py-1 rounded" style={{ background: "rgba(52,211,153,0.15)", color: "#34d399", border: "1px solid rgba(52,211,153,0.25)" }}>
+                          featured
+                        </span>
                       </div>
                     )}
                   </div>
 
-                  <Card.Content className="flex-1 flex flex-col">
-                    <h3 className="text-xl font-semibold text-text-primary mb-2 group-hover:text-primary transition-colors">
+                  {/* Content */}
+                  <div className="p-5 flex flex-col flex-1">
+                    <p className="font-mono text-xs mb-2" style={{ color: accent }}>
+                      <span style={{ opacity: 0.5 }}>// </span>project_{String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="text-base font-bold text-white font-mono mb-3 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-
-                    <p className="text-text-secondary text-sm mb-4 flex-1">
+                    <p className="text-sm text-text-secondary leading-relaxed mb-4 flex-1 line-clamp-3">
                       {project.description}
                     </p>
-
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 mt-auto">
                       {project.technologies.slice(0, 4).map((tech) => (
-                        <Badge key={tech} variant="default" size="sm">
+                        <span key={tech} className="font-mono text-xs px-2 py-1 rounded"
+                          style={{ background: "rgba(255,255,255,0.05)", color: "#64748b", border: "1px solid rgba(255,255,255,0.07)" }}>
                           {tech}
-                        </Badge>
+                        </span>
                       ))}
                       {project.technologies.length > 4 && (
-                        <Badge variant="default" size="sm">
+                        <span className="font-mono text-xs px-2 py-1 rounded"
+                          style={{ background: "rgba(255,255,255,0.05)", color: "#64748b", border: "1px solid rgba(255,255,255,0.07)" }}>
                           +{project.technologies.length - 4}
-                        </Badge>
+                        </span>
                       )}
                     </div>
-                  </Card.Content>
-                </Card>
-              </Tilt>
-            </motion.div>
-          ))}
+                  </div>
+                </motion.div>
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
       </motion.div>
 
-      {/* Show More/Less Button */}
       {projects.length > 3 && (
-        <motion.div
-          className="text-center mt-10"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-        >
-          <Button
-            variant="secondary"
-            onClick={() => setShowAll(!showAll)}
-            icon={
-              <ChevronRight
-                size={18}
-                className={`transition-transform ${showAll ? "rotate-90" : ""
-                  }`}
-              />
-            }
-            iconPosition="right"
-          >
-            {showAll ? "Show Less" : "View All Projects"}
-          </Button>
+        <motion.div className="text-center mt-10" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.button onClick={() => setShowAll(!showAll)}
+            className="font-mono text-sm px-6 py-3 rounded flex items-center gap-2 mx-auto transition-all"
+            style={{ background: "rgba(139,92,246,0.1)", color: "#a78bfa", border: "1px solid rgba(139,92,246,0.3)" }}
+            whileHover={{ scale: 1.04, boxShadow: "0 0 20px rgba(139,92,246,0.2)" }} whileTap={{ scale: 0.96 }}>
+            <Terminal size={14} />
+            {showAll ? "$ show --less" : "$ show --all-projects"}
+            <ChevronRight size={14} className={`transition-transform ${showAll ? "rotate-90" : ""}`} />
+          </motion.button>
         </motion.div>
       )}
     </Section>

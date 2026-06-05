@@ -3,3 +3,4 @@ export { default as Card } from "./Card";
 export { default as Badge } from "./Badge";
 export { default as AnimatedText } from "./AnimatedText";
 export { default as BackToTop } from "./BackToTop";
+export { default as HoloCard, LBrackets, Scanlines, HoloSheen, ScanBeam } from "./HoloCard";

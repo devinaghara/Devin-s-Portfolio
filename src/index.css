@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -30,6 +31,8 @@
 
   /* Font Family */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
 
   /* Animation Timing */
   --animate-duration-fast: 150ms;
@@ -321,6 +324,40 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* ── Terminal Theme Utilities ─────────────────── */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Holographic card glow pulse */
+@keyframes holo-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(139,92,246,0.3); }
+  50%       { box-shadow: 0 0 22px rgba(139,92,246,0.7); }
+}
+.holo-pulse {
+  animation: holo-pulse 2.4s ease-in-out infinite;
+}
+
+/* Terminal cursor blink */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.cursor-blink {
+  animation: cursor-blink 0.9s step-end infinite;
+}
+
+/* Scanline overlay utility */
+.scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0,0,0,0.14) 2px,
+    rgba(0,0,0,0.14) 4px
+  );
 }
 
 /* Screen reader only — for accessibility skip links */
