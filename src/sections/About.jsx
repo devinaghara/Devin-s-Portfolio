@@ -14,7 +14,7 @@ const About = () => {
   const { personal } = portfolioData;
 
   return (
-    <Section id="about" title="About Me" subtitle="Get to know me better — my journey, passion, and what drives me." centered>
+    <Section id="about" title="About Me" tag="About_me" subtitle="Get to know me better — my journey, passion, and what drives me." centered>
       <div className="grid lg:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
 
         {/* Avatar Panel */}

@@ -9,7 +9,7 @@ export const portfolioData = {
     bio: "Full Stack Developer passionate about building scalable web applications, backend systems, and modern digital experiences. Experienced with MERN Stack, ASP.NET Core MVC, Microservices Architecture, and CI/CD workflows through internships at Motorola Solutions and other industry projects.",
     avatar: avatar,
     resume:
-      "https://drive.google.com/file/d/1X39NcgJVzYiD1yrNA72mN01mRV1DhPM0/view?usp=sharing",
+      "https://drive.google.com/file/d/1y2Y_aFc4qCxdA6dolNrSItYXTPZBnyRt/view?usp=sharing",
     location: "Bengaluru, Karnataka",
     email: "devinaghara4@gmail.com",
     phone: "+91 9328861509",
@@ -39,6 +39,8 @@ export const portfolioData = {
   // Focus Areas
   focusAreas: [
     "Backend Engineering",
+    "Gen AI Application",
+    "AI Automation",
     "Microservices Architecture",
     "CI/CD Automation",
     "Scalable System Design",
@@ -58,16 +60,22 @@ export const portfolioData = {
     { name: "ASP.NET Core MVC", level: 90, category: "Backend" },
     { name: "REST APIs", level: 90, category: "Backend" },
 
-    // Database
-    { name: "MongoDB", level: 85, category: "Database" },
-    { name: "MySQL", level: 80, category: "Database" },
-    { name: "SQL Server", level: 80, category: "Database" },
-
+    // Gen AI
+    { name: "Vertex AI", level: 80, category: "Gen AI" },
+    { name: "Prompt Engineering", level: 85, category: "Gen AI" },
+    { name: "LLM Integration", level: 80, category: "Gen AI" },
+    { name: "AI Workflow Automation", level: 75, category: "Gen AI" },
+    
     // DevOps & Architecture
     { name: "Docker", level: 75, category: "DevOps" },
     { name: "GitHub Actions", level: 70, category: "DevOps" },
     { name: "Microservices", level: 80, category: "Architecture" },
-
+    
+    // Database
+    { name: "MongoDB", level: 85, category: "Database" },
+    { name: "MySQL", level: 80, category: "Database" },
+    { name: "SQL Server", level: 80, category: "Database" },
+    
     // Cloud
     { name: "AWS S3", level: 65, category: "Cloud" },
 
@@ -76,6 +84,7 @@ export const portfolioData = {
     { name: "C#", level: 90, category: "Languages" },
     { name: "Python", level: 75, category: "Languages" },
     { name: "SQL", level: 80, category: "Languages" },
+
 
     // Tools
     { name: "Git", level: 90, category: "Tools" },

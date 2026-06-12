@@ -37,7 +37,7 @@ const Hero = () => {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}
             className="flex items-center justify-center gap-2 mb-3">
             <Terminal size={14} style={{ color: "#8b5cf6" }} />
-            <span className="font-mono text-xs" style={{ color: "#8b5cf6", opacity: 0.7 }}>
+            <span className="font-mono text-sm" style={{ color: "#8b5cf6", opacity: 0.7 }}>
               <span style={{ opacity: 0.5 }}>$ </span>whoami
             </span>
           </motion.div>

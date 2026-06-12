@@ -13,7 +13,7 @@ const Projects = () => {
   const displayed = showAll ? projects : projects.slice(0, 3);
 
   return (
-    <Section id="projects" title="Featured Projects" subtitle="A selection of my recent work and personal projects." centered>
+    <Section id="projects" title="What I've built" tag="Projects" subtitle="A selection of my recent work and personal projects." centered>
 
       <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <AnimatePresence mode="popLayout">
@@ -43,50 +43,54 @@ const Projects = () => {
                       <span className="text-4xl opacity-40">🚀</span>
                     </div>
 
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#08081200] via-[#08081240] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
+                    {/* Hover overlay with buttons */}
+                    <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="flex gap-2">
                         {project.liveUrl && (
                           <motion.a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
-                            className="flex items-center gap-1 font-mono text-xs px-3 py-1.5 rounded"
-                            style={{ background: `${accent}20`, color: accent, border: `1px solid ${accent}40` }}
-                            whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                            <ExternalLink size={11} /> live
+                            className="flex items-center gap-1.5 font-mono text-xs px-4 py-2 rounded-md font-semibold"
+                            style={{ background: accent, color: "#000" }}
+                            whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
+                            <ExternalLink size={12} /> Live
                           </motion.a>
                         )}
                         {project.githubUrl && (
                           <motion.a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
-                            className="flex items-center gap-1 font-mono text-xs px-3 py-1.5 rounded"
-                            style={{ background: "rgba(255,255,255,0.08)", color: "#94a3b8", border: "1px solid rgba(255,255,255,0.1)" }}
-                            whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                            <Github size={11} /> repo
+                            className="flex items-center gap-1.5 font-mono text-xs px-4 py-2 rounded-md font-semibold"
+                            style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.25)" }}
+                            whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
+                            <Github size={12} /> GitHub
                           </motion.a>
+                        )}
+                        {!project.liveUrl && !project.githubUrl && (
+                          <span className="font-mono text-xs px-4 py-2 rounded-md" style={{ background: "rgba(255,255,255,0.08)", color: "#64748b", border: "1px solid rgba(255,255,255,0.1)" }}>
+                            🔒 Private / Internal
+                          </span>
                         )}
                       </div>
                     </div>
 
-                    {/* Badges */}
-                    {project.company && (
-                      <div className="absolute top-2 left-2">
-                        <span className="font-mono text-xs px-2 py-1 rounded" style={{ background: "rgba(139,92,246,0.2)", color: "#a78bfa", border: "1px solid rgba(139,92,246,0.3)" }}>
-                          {project.company}
-                        </span>
-                      </div>
-                    )}
-                    {project.featured && (
-                      <div className="absolute top-2 right-2">
-                        <span className="font-mono text-xs px-2 py-1 rounded" style={{ background: "rgba(52,211,153,0.15)", color: "#34d399", border: "1px solid rgba(52,211,153,0.25)" }}>
-                          featured
-                        </span>
-                      </div>
-                    )}
                   </div>
 
                   {/* Content */}
                   <div className="p-5 flex flex-col flex-1">
-                    <p className="font-mono text-xs mb-2" style={{ color: accent }}>
-                      <span style={{ opacity: 0.5 }}>// </span>project_{String(index + 1).padStart(2, "0")}
-                    </p>
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <p className="font-mono text-xs" style={{ color: accent }}>
+                        <span style={{ opacity: 0.5 }}>// </span>project_{String(index + 1).padStart(2, "0")}
+                      </p>
+                      <div className="flex items-center gap-1.5">
+                        {project.company && (
+                          <span className="font-mono text-xs px-2 py-0.5 rounded" style={{ background: "rgba(139,92,246,0.15)", color: "#a78bfa", border: "1px solid rgba(139,92,246,0.35)" }}>
+                            {project.company}
+                          </span>
+                        )}
+                        {project.featured && (
+                          <span className="font-mono text-xs px-2 py-0.5 rounded" style={{ background: "rgba(52,211,153,0.15)", color: "#34d399", border: "1px solid rgba(52,211,153,0.35)" }}>
+                            ★ featured
+                          </span>
+                        )}
+                      </div>
+                    </div>
                     <h3 className="text-base font-bold text-white font-mono mb-3 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>

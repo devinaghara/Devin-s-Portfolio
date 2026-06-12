@@ -8,8 +8,9 @@ import {
   SiReact, SiDotnet, SiJavascript, SiNodedotjs, SiMysql, SiMongodb,
   SiAmazons3, SiTailwindcss, SiShadcnui, SiExpress, SiDocker,
   SiGithubactions, SiPython, SiGit, SiGithub, SiPostman, SiSocketdotio, SiSwagger,
+  SiGooglecloud, SiGooglegemini,
 } from "react-icons/si";
-import { TbBrandCSharp, TbFileTypeSql, TbServer } from "react-icons/tb";
+import { TbBrandCSharp, TbFileTypeSql, TbServer, TbBrain, TbAi } from "react-icons/tb";
 
 const techIcons = {
   "React.js": SiReact, "Tailwind CSS": SiTailwindcss, "Shadcn UI": SiShadcnui,
@@ -19,6 +20,9 @@ const techIcons = {
   "AWS S3": SiAmazons3, "JavaScript": SiJavascript, "C#": TbBrandCSharp,
   "Python": SiPython, "SQL": TbFileTypeSql, "Git": SiGit, "GitHub": SiGithub,
   "Postman": SiPostman, "Socket.IO": SiSocketdotio,
+  // Gen AI
+  "Vertex AI": SiGooglecloud, "Prompt Engineering": SiGooglegemini,
+  "LLM Integration": TbBrain, "AI Workflow Automation": TbAi,
 };
 const iconColors = {
   "React.js": "#61DAFB", "Tailwind CSS": "#06B6D4", "Shadcn UI": "#fff",
@@ -28,11 +32,13 @@ const iconColors = {
   "Microservices": "#8b5cf6", "AWS S3": "#FF9900", "JavaScript": "#F7DF1E",
   "C#": "#239120", "Python": "#3776AB", "SQL": "#e38c00",
   "Git": "#F05032", "GitHub": "#fff", "Postman": "#FF6C37", "Socket.IO": "#fff",
+  "Vertex AI": "#4285F4", "Prompt Engineering": "#8E75B2",
+  "LLM Integration": "#a855f7", "AI Workflow Automation": "#06b6d4",
 };
 const ACCENT_BY_CAT = {
   Frontend: "#61DAFB", Backend: "#8b5cf6", Database: "#47A248",
   DevOps: "#2496ED", Architecture: "#8b5cf6", Cloud: "#FF9900",
-  Languages: "#F7DF1E", Tools: "#06b6d4",
+  Languages: "#F7DF1E", Tools: "#06b6d4", "Gen AI": "#a855f7",
 };
 
 const INITIAL_SHOW = 15; // skills visible before expand
@@ -52,7 +58,7 @@ const Skills = () => {
   const hiddenCount = filtered.length - INITIAL_SHOW;
 
   return (
-    <Section id="skills" title="Skills & Expertise" subtitle="Technologies and tools I use to bring ideas to life." centered>
+    <Section id="skills" title="Skills & Expertise" tag="Skills" subtitle="Technologies and tools I use to bring ideas to life." centered>
 
       {/* Filter tabs */}
       <motion.div className="flex flex-wrap justify-center gap-2 mb-10"

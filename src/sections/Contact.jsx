@@ -43,7 +43,7 @@ const Contact = () => {
   };
 
   return (
-    <Section id="contact" title="Get In Touch" subtitle="Have a project in mind? Let's work together to bring your ideas to life." centered>
+    <Section id="contact" title="Get In Touch" tag="Contact_me" subtitle="Have a project in mind? Let's work together to bring your ideas to life." centered>
       <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
         {/* Info Panel */}

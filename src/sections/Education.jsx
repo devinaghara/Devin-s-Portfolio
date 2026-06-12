@@ -11,7 +11,7 @@ const Education = () => {
   const { education } = portfolioData;
 
   return (
-    <Section id="education" title="Education" subtitle="My academic journey and qualifications." centered>
+    <Section id="education" title="Academic Background" tag="Education" subtitle="My academic journey and qualifications." centered>
       <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
         {education.map((edu, index) => {
           const accent = EDU_ACCENTS[index % 2];

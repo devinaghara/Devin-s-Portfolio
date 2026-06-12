@@ -159,7 +159,7 @@ const Experience = () => {
   const handleNext = () => { if (activeIndex < experience.length - 1) scrollToCard(activeIndex + 1); };
 
   return (
-    <Section id="experience" title="Work Experience" subtitle="My professional journey — each role a chapter in my growth story." centered>
+    <Section id="experience" title="Where I've Worked" tag="Experience" subtitle="My professional journey — each role a chapter in my growth story." centered>
 
       {/* ── Navigation bar ── */}
       <div className="flex items-center justify-between max-w-3xl mx-auto mb-5 px-1">

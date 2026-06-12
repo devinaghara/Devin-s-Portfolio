@@ -26,7 +26,8 @@ const Certifications = () => {
   return (
     <Section
       id="certifications"
-      title="Certifications"
+      title="Certifications & Learnings"
+      tag="Certifications"
       subtitle="Professional certifications and credentials I've earned."
       centered
     >

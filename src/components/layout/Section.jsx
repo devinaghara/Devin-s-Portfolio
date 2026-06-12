@@ -3,8 +3,15 @@ import { motion } from "framer-motion";
 import { cn } from "../../utils/cn";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
-const Section = ({ children, id, className, title, subtitle, centered = false }) => {
+const Section = ({ children, id, className, title, tag, subtitle, centered = false }) => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
+  // The terminal label: use explicit `tag` if provided, otherwise derive from title
+  const terminalLabel = tag
+    ? tag.toLowerCase().replace(/\s+/g, "_")
+    : title
+    ? title.toLowerCase().replace(/\s+/g, "_")
+    : "";
 
   return (
     <section id={id} className={cn("section overflow-x-hidden relative", className)}>
@@ -32,10 +39,10 @@ const Section = ({ children, id, className, title, subtitle, centered = false })
             <div className={cn("mb-12", centered && "text-center mx-auto")}>
               {title && (
                 <div className={cn("mb-3", centered && "flex flex-col items-center")}>
-                  {/* Terminal prefix */}
-                  <p className="font-mono text-xs mb-2" style={{ color: "#8b5cf6" }}>
+                  {/* Terminal prefix — shows `tag` label, not the title */}
+                  <p className="font-mono text-sm mb-2" style={{ color: "#8b5cf6" }}>
                     <span style={{ opacity: 0.5 }}>$ </span>
-                    {title.toLowerCase().replace(/\s+/g, "_")}.sh
+                    {terminalLabel}.sh
                   </p>
                   <h2 className="section-title">
                     <span style={{
